@@ -1,4 +1,3 @@
-rjamestaylor.github.io
-======================
-
 Terror's Treats
+======================
+Never a threat; always a treat!
