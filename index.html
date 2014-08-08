@@ -36,7 +36,7 @@
 <p>This is a spot where I publish helpful tips and tricks -- mainly for me to find later. There may also be other kinds of posts, too. You have been warned. </p>
 <p><h4>get version numbers from a bunch of war files</h4><p>Having a bunch of war files in a directory, I just want to pull out info from one common file in each. I did this: 
 <blockquote><code>
-  $ for i in `ls -1 *.war`; do echo $i ; j=`echo $i|cut -d. -f 1`; mkdir -p $j; mv $i $j ; done
+  $ for i in `ls -1 *.war`; do echo $i ; j=`echo $i|cut -d. -f 1`; mkdir -p $j; mv $i $j ; done<br \>
   $ for i in `ls -1` ; do echo $i; grep buildNumber $i/version.xml; done
 </code></blockquote>
 </p>
