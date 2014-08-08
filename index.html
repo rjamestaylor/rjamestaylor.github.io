@@ -37,7 +37,7 @@
 <p>&nbsp;</p>
 <h3>Paragraphs of Content</h3>
 <p>&nbsp;</p>
-<h4>Enabling multi-device Virtual MFA on AWS root accounts</h4>
+<h4 id="Enabling multi-device Virtual MFA on AWS root accounts">Enabling multi-device Virtual MFA on AWS root accounts</h4>
 <p>I just enabled MFA for AWS root account credentials and synced with multiple devices.
 </p><p>Yes, <i>multiple devices</i> -- and not by using Authly or other "MFA sharing" services.
 </p><p>Why? Well, a friend and I share an AWS account and both want access to the root account for continuation should something happen to either one of us. We use IAM users for everything, but the root account is critical and while we want MFA on the account, we don't want a SPOF by having only one person's device enabled for MFA. I imagine other entities have a similar concern.
