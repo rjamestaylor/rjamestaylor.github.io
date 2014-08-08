@@ -32,15 +32,28 @@
 <h3>
 <a name="never-a-threat-always-a-treat" class="anchor" href="#never-a-threat-always-a-treat"><span class="octicon octicon-link"></span></a><em>Never a threat, always a treat</em>
 </h3>
-
+<h3>Paragraphs of Content</h3>
+<p>&nbsp;</p>
+<h4>Enabling multi-device Virtual MFA on AWS root accounts</h4>
+<p>I just enabled MFA for AWS root account credentials and synced with multiple devices.
+</p><p>Yes, <emphasis>multiple devices -- and not by using Authly or other "MFA sharing" services.</emphasis>
+</p><p>How? Well, I chose to enable a new Virtual MFA device and when presented with the QR Code screen, I took a screen shot and saved the manual entry code into a secure server. Then I entered the two sequential tokens and securely shared the stored secrets.
+</p><p>Now with Google Authenticator or Sophos Authenticator (for ipad) as many devices we chose share the same vMFA.
+</p><p>Besides reducing the risk of losing a single physical device allowing MFA access to the AWS account, this has other implications.
+</p><p>Primarily: <strong></strong>THE QR CODE AND MANUAL ENTRY CODE ARE LIVE SECRETS AND MUST BE SECURED!</stong>
+</p><p>Don't register a vMFA on in a public place, on an insecure network, or insecure computer.
+</p><p>Delete the QR code from your browsers cache, download folder, etc. Same with the manual entry code!
+</p><p>AWS doesn't require a PIN with the MFA token, cannot determine more than one vMFA is in use, and no other authentication than the QR/manual entry code is needed to sync a device.
+<p>&nbsp;</p>
 <p>This is a spot where I publish helpful tips and tricks -- mainly for me to find later. There may also be other kinds of posts, too. You have been warned. </p>
-<p><h4>get version numbers from a bunch of war files</h4><p>Having a bunch of war files in a directory, I just want to pull out info from one common file in each. I did this: 
+<p><h4>Get build version numbers from a bunch of war files</h4><p>Having a bunch of war files in a directory, I just want to pull out info from one common file in each. I did this: 
 <blockquote><code>
   $ for i in `ls -1 *.war`; do echo $i ; j=`echo $i|cut -d. -f 1`; mkdir -p $j; mv $i $j ; done<br \>
   $ for i in `ls -1` ; do echo $i; grep buildNumber $i/version.xml; done
 </code></blockquote>
 </p>
 </p><p>&nbsp;</p>
+<h4>My Twitter Search Widget for #AWS</h4>
 <p><a class="twitter-timeline" href="https://twitter.com/hashtag/aws" data-widget-id="488825823927865344">#aws Tweets</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
