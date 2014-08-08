@@ -39,11 +39,12 @@
 <p>&nbsp;</p>
 <h4>Enabling multi-device Virtual MFA on AWS root accounts</h4>
 <p>I just enabled MFA for AWS root account credentials and synced with multiple devices.
-</p><p>Yes, <emphasis>multiple devices -- and not by using Authly or other "MFA sharing" services.</emphasis>
-</p><p>How? Well, I chose to enable a new Virtual MFA device and when presented with the QR Code screen, I took a screen shot and saved the manual entry code into a secure server. Then I entered the two sequential tokens and securely shared the stored secrets.
-</p><p>Now with Google Authenticator or Sophos Authenticator (for ipad) as many devices we chose share the same vMFA.
+</p><p>Yes, <i>multiple devices</i> -- and not by using Authly or other "MFA sharing" services.
+</p><p>Why? Well, a friend and I share an AWS account and both want access to the root account for continuation should something happen to either one of us. We use IAM users for everything, but the root account is critical and while we want MFA on the account, we don't want a SPOF by having only one person's device enabled for MFA. I imagine other entities have a similar concern.
+</p><p>How? Simple! I chose to enable a new Virtual MFA device and when presented with the QR Code screen, I took a screen shot and saved the manual entry code into a secure server. Then I entered the two sequential tokens and securely shared the stored secrets.
+</p><p>Now with Google Authenticator or Sophos Authenticator (for ipad) as many devices we choose share the same vMFA.
 </p><p>Besides reducing the risk of losing a single physical device allowing MFA access to the AWS account, this has other implications.
-</p><p>Primarily: <strong></strong>THE QR CODE AND MANUAL ENTRY CODE ARE LIVE SECRETS AND MUST BE SECURED!</stong>
+</p><p>Primarily: <b>THE QR CODE AND MANUAL ENTRY CODE ARE LIVE SECRETS AND MUST BE SECURED!</b>
 </p><p>Don't register a vMFA on in a public place, on an insecure network, or insecure computer.
 </p><p>Delete the QR code from your browsers cache, download folder, etc. Same with the manual entry code!
 </p><p>AWS doesn't require a PIN with the MFA token, cannot determine more than one vMFA is in use, and no other authentication than the QR/manual entry code is needed to sync a device.
