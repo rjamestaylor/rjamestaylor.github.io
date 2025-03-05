@@ -186,4 +186,4 @@ This project demonstrates how modern cloud services, mobile development, and AI 
 
 ![System Architecture Diagram](/assets/images/vpn-architecture.png)
 
-The complete source code and documentation for this project are available on GitHub at [github.com/TerrorTunnels](https://github.com/TerrorTunnels).
+The complete source code, GenAI chat transcripts, and documentation for this project are available on GitHub at [github.com/TerrorTunnels](https://github.com/TerrorTunnels).
