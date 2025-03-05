@@ -1,0 +1,72 @@
+---
+layout: default
+title: "404: Page not found"
+permalink: /404.html
+---
+
+<div class="page-not-found">
+  <h1>404</h1>
+  <h2>Page not found</h2>
+  <p>Hmm, it seems you've ventured too deep into the tunnel.</p>
+  <p>The page you're looking for doesn't exist or has been moved.</p>
+  
+  <div class="robot-error">
+    <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Robot Head -->
+      <rect x="60" y="60" width="80" height="80" fill="#666" rx="10" />
+      
+      <!-- Robot Eyes - X-shaped for errors -->
+      <line x1="75" y1="85" x2="95" y2="105" stroke="#ff3333" stroke-width="4" />
+      <line x1="95" y1="85" x2="75" y2="105" stroke="#ff3333" stroke-width="4" />
+      
+      <line x1="125" y1="85" x2="105" y2="105" stroke="#ff3333" stroke-width="4" />
+      <line x1="105" y1="85" x2="125" y2="105" stroke="#ff3333" stroke-width="4" />
+      
+      <!-- Robot Antenna - broken -->
+      <path d="M100 60 L100 40 L110 30 L90 25" stroke="#666" stroke-width="3" fill="none" />
+      
+      <!-- Digital Error Lines -->
+      <path d="M30 100 L50 100" stroke="#ff3333" stroke-width="2" stroke-dasharray="5,5" />
+      <path d="M150 100 L170 100" stroke="#ff3333" stroke-width="2" stroke-dasharray="5,5" />
+    </svg>
+  </div>
+  
+  <p><a href="{{ site.baseurl }}/">Return to the homepage</a></p>
+</div>
+
+<style>
+  .page-not-found {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .page-not-found h1 {
+    font-size: 5rem;
+    margin: 0;
+    color: #ff3333;
+  }
+  
+  .page-not-found h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .robot-error {
+    margin: 2rem auto;
+  }
+  
+  .page-not-found a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .page-not-found a:hover {
+    background-color: #555;
+  }
+</style>

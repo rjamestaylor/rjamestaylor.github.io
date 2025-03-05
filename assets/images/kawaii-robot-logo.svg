@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#f6f6f6" rx="20" ry="20" />
+  
+  <!-- Pastel Circle Background -->
+  <circle cx="200" cy="95" r="80" fill="#d6e5ff" />
+  
+  <!-- Kawaii Robot Body -->
+  <rect x="160" y="55" width="80" height="80" rx="15" ry="15" fill="#a0d6ff" stroke="#6b96cc" stroke-width="3" />
+  
+  <!-- Robot Antenna -->
+  <line x1="200" y1="55" x2="200" y2="40" stroke="#6b96cc" stroke-width="3" stroke-linecap="round" />
+  <circle cx="200" cy="35" r="7" fill="#98beff" stroke="#6b96cc" stroke-width="2" />
+  
+  <!-- Shiny Reflection -->
+  <circle cx="185" cy="70" r="5" fill="white" opacity="0.7" />
+  <circle cx="175" cy="62" r="3" fill="white" opacity="0.5" />
+  
+  <!-- Kawaii Eyes -->
+  <circle cx="180" cy="85" r="8" fill="#333" />
+  <circle cx="220" cy="85" r="8" fill="#333" />
+  
+  <!-- Eye Highlights -->
+  <circle cx="177" cy="82" r="3" fill="white" />
+  <circle cx="217" cy="82" r="3" fill="white" />
+  
+  <!-- Cute Blush -->
+  <circle cx="170" cy="100" r="6" fill="#a0c2ff" opacity="0.6" />
+  <circle cx="230" cy="100" r="6" fill="#a0c2ff" opacity="0.6" />
+  
+  <!-- Happy Mouth -->
+  <path d="M190 105 Q200 115 210 105" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  
+  <!-- Digital Gear -->
+  <path d="M200 30 L203 38 L211 35 L208 43 L216 46 L208 49 L211 57 L203 54 L200 62 L197 54 L189 57 L192 49 L184 46 L192 43 L189 35 L197 38 Z" fill="#7eb5ff" />
+  
+  <!-- Text -->
+  <text x="200" y="165" font-family="Arial, sans-serif" font-size="24" fill="#6b96cc" text-anchor="middle" font-weight="bold">RobotTerror</text>
+
+  <!-- Decorative Stars -->
+  <path d="M150 60 L153 68 L161 68 L155 73 L157 80 L150 76 L143 80 L145 73 L139 68 L147 68 Z" fill="#ffffa0" stroke="#ffda7c" stroke-width="1" />
+  <path d="M250 60 L253 68 L261 68 L255 73 L257 80 L250 76 L243 80 L245 73 L239 68 L247 68 Z" fill="#ffffa0" stroke="#ffda7c" stroke-width="1" />
+  <path d="M150 130 L152 136 L158 136 L153 140 L155 146 L150 143 L145 146 L147 140 L142 136 L148 136 Z" fill="#ffffa0" stroke="#ffda7c" stroke-width="1" opacity="0.7" />
+  <path d="M250 130 L252 136 L258 136 L253 140 L255 146 L250 143 L245 146 L247 140 L242 136 L248 136 Z" fill="#ffffa0" stroke="#ffda7c" stroke-width="1" opacity="0.7" />
+</svg>
