@@ -1,0 +1,44 @@
+# Site settings
+title: Robot Terror - Liability Engineering
+description: Tech experiments, travel adventures, and code explorations
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://liability.engineering" # the base hostname & protocol
+
+# Build settings
+markdown: kramdown
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-remote-theme
+
+# Theme-specific settings
+title: Robot Terror
+logo: /assets/images/kawaii-robot-logo.svg
+description: Tech experiments, travel adventures, and code explorations by Robert Taylor
+show_downloads: false
+
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Robert Taylor"
+      
+# Pagination settings
+paginate: 5
+paginate_path: "/page/:num/"
+
+# Exclude these files from production site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
+  - _excludes 

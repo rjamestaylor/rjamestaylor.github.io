@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<h2>Recent Projects</h2>
+
+{% for post in site.posts %}
+  <div class="post-entry">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+    {% if post.excerpt %}
+      <p>{{ post.excerpt }}</p>
+    {% endif %}
+    <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+  </div>
+  <hr>
+{% endfor %}

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Background Tunnel Effect -->
+  <defs>
+    <linearGradient id="tunnelGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a4a4a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect for robot eyes -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Tunnel Circles -->
+  <circle cx="200" cy="100" r="150" fill="url(#tunnelGradient)" />
+  <circle cx="200" cy="100" r="120" fill="#2a2a2a" />
+  <circle cx="200" cy="100" r="90" fill="#3a3a3a" />
+  <circle cx="200" cy="100" r="60" fill="#4a4a4a" />
+  
+  <!-- Robot Face -->
+  <rect x="170" y="70" width="60" height="60" fill="#666" rx="10" />
+  
+  <!-- Robot Eyes -->
+  <circle cx="185" cy="90" r="8" fill="#ff3333" filter="url(#glow)" />
+  <circle cx="215" cy="90" r="8" fill="#ff3333" filter="url(#glow)" />
+  
+  <!-- Robot Antenna -->
+  <path d="M200 60 L200 40 L210 30" stroke="#666" stroke-width="3" fill="none" />
+  <circle cx="210" cy="30" r="3" fill="#ff3333" />
+  
+  <!-- Digital Lines -->
+  <path d="M50 100 L150 100" stroke="#33ff33" stroke-width="2" stroke-dasharray="5,5" />
+  <path d="M250 100 L350 100" stroke="#33ff33" stroke-width="2" stroke-dasharray="5,5" />
+  
+  <!-- Text -->
+  <text x="200" y="180" font-family="Arial, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">RobotTerror</text>
+</svg>
