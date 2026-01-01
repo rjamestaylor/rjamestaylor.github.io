@@ -3,6 +3,7 @@ title: Robot Terror - Liability Engineering
 description: Tech experiments, travel adventures, and code explorations
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://liability.engineering" # the base hostname & protocol
+repository: rjamestaylor/rjamestaylor.github.io
 
 # Build settings
 markdown: kramdown
