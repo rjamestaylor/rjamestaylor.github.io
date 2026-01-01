@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From 'Exercise Left to the Reader' to Production-Ready: Revisiting AI-Assisted Development One Year Later"
-date: 2026-01-01 12:00:00 -0800
+date: 2026-01-01 00:00:00 -0800
 categories: [technology, ai]
 tags: [claude-code, serverless, infrastructure-as-code, ai-assisted-development, aws]
 excerpt: "Nearly a year ago, the TerrorTunnels VPN control API was just a Lambda function with manual setup steps. Returning to it with Claude Code transformed it into a complete infrastructure-as-code solution—and revealed how AI-assisted development has evolved."
