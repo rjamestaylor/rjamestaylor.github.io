@@ -20,11 +20,7 @@ gem "github-pages", "~> 232", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-seo-tag"
-  gem "jekyll-sitemap"
-  gem "jekyll-paginate"
-  gem "jekyll-remote-theme"
+  # These are already included in the github-pages gem
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
