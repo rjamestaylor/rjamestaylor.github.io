@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Robot in the Loop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/black.min.css" id="theme">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Title -->
+            <section data-background-class="bg-dark">
+                <h1 class="glitch-text">The Robot in the Loop</h1>
+                <p class="subtitle">Augmentation, not Automation.</p>
+                <div class="footer">robert taylor | liability.engineering</div>
+            </section>
+
+            <!-- Slide 2: The Hook -->
+            <section>
+                <div class="console-window">
+                    <span class="prompt">$</span> ticket_inbound --msg "My site is slow"
+                    <span class="blinking-cursor">_</span>
+                </div>
+                <p class="fragment fade-up secondary-text">The four words that freeze a new agent.</p>
+            </section>
+
+            <!-- Slide 3: The Gap -->
+            <section>
+                <div class="comparison-grid">
+                    <div class="col fragment">
+                        <h3>New Agent</h3>
+                        <div class="icon-box">?</div>
+                        <p>Scanning infinite possibilities.<br>Checking random things.</p>
+                    </div>
+                    <div class="col fragment">
+                        <h3>Experienced Engineer</h3>
+                        <div class="icon-box">!</div>
+                        <p>Pattern Recognition.<br>"Check the switch."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: The Failure of Tools -->
+            <section>
+                <h3>Knowledge Access Problem</h3>
+                <ul class="clean-list">
+                    <li class="fragment">Dashboards? <span class="dim">Assume you know what to monitor.</span></li>
+                    <li class="fragment">Runbooks? <span class="dim">Assume you know which one to run.</span></li>
+                    <li class="fragment">Search? <span class="dim">Assume you know the keywords.</span></li>
+                </ul>
+                <p class="fragment highlight-box">Tools don't transform ambiguity into direction.</p>
+            </section>
+
+            <!-- Slide 5: What is Experience? -->
+            <section>
+                <h3>Experience is<br><span class="accent-text">Pattern Recognition</span></h3>
+                <pre class="code-block fragment"><code class="language-bash">
+INPUT: "Load > 1000"
+MATCH: High Load Pattern #42
+ACTION: "Rename file X in directory Y"
+                </code></pre>
+                <p class="fragment text-small">It's not magic. It's a decision tree built over years.</p>
+            </section>
+
+            <!-- Slide 6: The AI Solution -->
+            <section>
+                <h2>The Proposal</h2>
+                <div class="big-statement">
+                    What if the AI handled the <br>
+                    <span class="accent-text">first 30 seconds</span>?
+                </div>
+            </section>
+
+            <!-- Slide 7: The Situation Report (Visual) -->
+            <section data-auto-animate>
+                <div class="terminal-view">
+                    <div class="terminal-header">AI_AGENT_DIAGNOSTIC</div>
+                    <div class="terminal-body text-left text-sm">
+                        <div class="line fragment">Checking Switch Metrics... <span class="text-green-400">DONE</span></div>
+                        <div class="line fragment">Checking Server Load... <span class="text-green-400">DONE</span></div>
+                        <div class="line fragment">Patter Matching... <span class="text-yellow-400">PROCESSING</span></div>
+                        <br>
+                        <div class="line fragment text-white font-bold">>>> PRIMARY HYPOTHESIS (91%): OUTBOUND ATTACK</div>
+                        <div class="line fragment dimmed">- Egress traffic 60x normal</div>
+                        <div class="line fragment dimmed">- Apache connections high</div>
+                        <div class="line fragment dimmed">- Matches "Compromised CMS" pattern</div>
+                        <br>
+                        <div class="line fragment text-cyan-400">>>> SUGGESTED NEXT STEP: Parse access logs for top talkers.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: The Map -->
+            <section>
+                <h3>It's a Map, not an Autopilot.</h3>
+                <div class="fragment fade-up">
+                    <p>The agent receives:</p>
+                    <ul class="clean-list">
+                        <li>Infrastructure-first view</li>
+                        <li>Contextualized metrics</li>
+                        <li>Concrete first step</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 9: Human in the Loop -->
+            <section>
+                <h3>Why the Human Remains</h3>
+                <div class="comparison-grid">
+                    <div class="col fragment">
+                        <h4>When Patterns Fail</h4>
+                        <p class="text-small">Is it a DDoS or a Viral Video?</p>
+                        <p class="text-small">Humans judge context.</p>
+                    </div>
+                    <div class="col fragment">
+                        <h4>The Relationship</h4>
+                        <p class="text-small">Empathy. Trust.</p>
+                        <p class="text-small">"We're on it."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Organizational Impact -->
+            <section>
+                <h3>The Organizational Case</h3>
+                <div class="three-col-grid">
+                    <div class="grid-item fragment">
+                        <span class="icon">⚡️</span>
+                        <h4>Tier 1</h4>
+                        <p>Confidence.<br>Less burnout.</p>
+                    </div>
+                    <div class="grid-item fragment">
+                        <span class="icon">🧠</span>
+                        <h4>Tier 3</h4>
+                        <p>Focus on<br>novel problems.</p>
+                    </div>
+                    <div class="grid-item fragment">
+                        <span class="icon">💰</span>
+                        <h4>Business</h4>
+                        <p>Faster resolution.<br>Better economics.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Conclusion -->
+            <section>
+                <h2 class="final-statement">Augmentation<br><span class="dim">vs</span><br>Automation</h2>
+                <p class="fragment fade-up">Make every agent as effective as your best one.</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: false,
+            progress: true,
+            center: true,
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

@@ -15,6 +15,14 @@ The original repository contained a working `handler.py` and a markdown file tit
 
 I returned to this repo in January 2026 with a different tool: [Claude Code](https://claude.ai/code), Anthropic's CLI agent powered by Claude Opus 4.5. What happened next exemplifies how far we've come and where we are with AI-assisted development.
 
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0; border: 1px solid #333;">
+  <iframe src="/assets/presentations/revisiting-ai-assisted-development/index.html" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+<div style="text-align: center; margin-bottom: 2rem;">
+  <a href="/assets/presentations/revisiting-ai-assisted-development/index.html" target="_blank">View Presentation Fullscreen ↗</a>
+</div>
+
 ## The Starting Point
 
 Here's what the repository looked like in February 2025:

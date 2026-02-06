@@ -1,0 +1,222 @@
+/* Global Settings */
+:root {
+    --bg-color: #050505;
+    --text-color: #ffffff;
+    --accent-color: #00f3ff;
+    --secondary-color: #888888;
+    --code-bg: #111111;
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-main);
+}
+
+.reveal {
+    color: var(--text-color);
+    font-family: var(--font-main);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+.reveal h1 {
+    font-size: 2.0em;
+    color: var(--text-color);
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    margin-bottom: 40px;
+}
+
+.reveal .subtitle {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    margin-top: 0;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+}
+
+.reveal h3 {
+    color: var(--text-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 20px;
+}
+
+/* Utilities */
+.text-small {
+    font-size: 0.6em;
+}
+
+.dim {
+    color: var(--secondary-color);
+    opacity: 0.7;
+}
+
+.accent-text {
+    color: var(--accent-color);
+}
+
+.clean-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    margin-left: 10%;
+}
+
+.clean-list li {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    border-left: 1px solid #333;
+    padding-left: 20px;
+}
+
+/* Glitch Effect for Title */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+/* Console Window */
+.console-window {
+    background: var(--code-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 1.5em;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.prompt {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.blinking-cursor {
+    animation: blink 1s step-end infinite;
+    color: var(--accent-color);
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Comparison Grid */
+.comparison-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.col {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    border-top: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.col:hover {
+    border-top: 2px solid var(--accent-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.icon-box {
+    font-size: 3em;
+    margin: 20px 0;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Terminal View */
+.terminal-view {
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    padding: 20px;
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.1);
+    font-size: 0.7em;
+    line-height: 1.4;
+}
+
+.terminal-header {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.terminal-body .line {
+    margin-bottom: 5px;
+}
+
+/* 3 Column Grid */
+.three-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.grid-item {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.grid-item .icon {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Highlight Box */
+.highlight-box {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px dashed var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.4em;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 10;
+}
+
+/* Code Block Override */
+.reveal pre code {
+    background: #111;
+    border: 1px solid #333;
+    box-shadow: none;
+    font-family: var(--font-mono);
+    padding: 20px;
+    font-size: 1.2em;
+    line-height: 1.4;
+}

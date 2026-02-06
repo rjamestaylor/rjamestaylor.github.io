@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisiting AI-Assisted Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --text-main: #e0e0e0;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #bd00ff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            background-image: url('assets/background.png');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            overflow: hidden;
+        }
+
+        /* Overlay for readability */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 12, 0.85); /* Darken the generated background */
+            z-index: 0;
+        }
+
+        .slides-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            pointer-events: none;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .slide.left {
+            transform: translateX(-50px);
+            opacity: 0;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+             font-size: 1.8rem;
+             color: var(--accent-purple);
+             margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .content-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            max-width: 1000px;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .code-block {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(0,0,0,0.5);
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 100%;
+            color: #ccc;
+            text-align: left;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .code-highlight {
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        .speaker-prompts {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            font-size: 1.3rem;
+            color: #888;
+            text-align: left;
+        }
+
+        .prompt-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .prompt-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .prompt-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 0.5rem;
+        }
+
+        .prompt-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-purple);
+        }
+
+        .nav-hint {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+            z-index: 10;
+        }
+
+        img.slide-graphic {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+        }
+
+        .two-col {
+            display: flex;
+            gap: 2rem;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .file-tree {
+            text-align: left;
+            font-family: monospace;
+            line-height: 1.4;
+            color: #aaa;
+        }
+        
+        .trust-gradient {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+
+        .bar {
+            width: 15%;
+            background: linear-gradient(to top, var(--accent-purple), var(--accent-cyan));
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: height 1s ease;
+            opacity: 0.8;
+        }
+
+        .bar span {
+            position: absolute;
+            bottom: -30px;
+            width: 200%;
+            left: -50%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #fff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="slides-container">
+        
+        <!-- Slide 1: Intro -->
+        <div class="slide active">
+            <h1>Revisiting AI-Assisted Development</h1>
+            <p style="color: var(--accent-cyan); font-weight: 600;">One Year Later</p>
+            <div class="content-box">
+                <p>From "Exercise Left to the Reader"<br>to Production-Ready Infrastructure</p>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>Intro self & the 'Robot Terror' side project.</li>
+                        <li>Context: Replaced manual work with AI in 2026.</li>
+                        <li>Source: Recent blog post review.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Starting Point (2025) -->
+        <div class="slide">
+            <h2>The Starting Point (2025)</h2>
+            <div class="content-box">
+                <div class="two-col">
+                    <div class="col file-tree code-block">
+                        vpn-control-api/<br>
+                        ├── handler.py<br>
+                        ├── api-gateway-how-to.md<br>
+                        └── README.md
+                    </div>
+                    <div class="col">
+                        <h3>Great Code.<br>Manual Infrastructure.</h3>
+                        <p style="font-size: 1rem;">Setup was a 60-step process.</p>
+                    </div>
+                </div>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>2025: "TerrorTunnels" API.</li>
+                        <li>AI wrote the Python code perfectly.</li>
+                        <li>BUT: Creating the API Gateway, IAM, etc. was manual.</li>
+                        <li>"Powerful code generation, wrapped in manual toil."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: The Gap -->
+        <div class="slide">
+            <h2>The "Last Mile" Problem</h2>
+            <div class="content-box">
+                <img src="assets/diagram.png" class="slide-graphic" alt="Code to Cloud Diagram">
+                <p>Translating code implementation into cloud reality was the bottleneck.</p>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>The gap between `handler.py` and a working URL.</li>
+                        <li>AI could *tell* me what to do, but couldn't *do* it.</li>
+                        <li>Result: Friction. Ideas died in the "deployment" phase.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Enter 2026 -->
+        <div class="slide">
+            <h2>Enter 2026: Agency</h2>
+            <div class="content-box">
+                <h1>CLAUDE CODE</h1>
+                <p>The shift from "Chatbot" to "Agentic CLI".</p>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>Returned to the project in Jan 2026.</li>
+                        <li>Used Claude Code (CLI agent).</li>
+                        <li>Different interaction model entirely.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Transformation -->
+        <div class="slide">
+            <h2>One Conversation</h2>
+            <div class="content-box">
+                <div class="code-block" style="border-left-color: var(--accent-cyan);">
+                    > Develop a robust, secure, cost-efficient<br>
+                    > AWS API Gateway implementation.
+                </div>
+                <p>Explored codebase. Chose SAM. Generated Template. Fixed Errors.</p>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>I gave a high-level goal, not a snippet request.</li>
+                        <li>It acted autonomously: Exploration -> Decision -> Execution.</li>
+                        <li>It even diagnosed its own deployment errors (IAM logs).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: The Result -->
+        <div class="slide">
+            <h2>The Result</h2>
+            <div class="content-box">
+                <div class="two-col">
+                    <div class="col file-tree code-block">
+                        vpn-control-api/<br>
+                        ├── template.yaml <span style="color:var(--accent-cyan)">(Infra)</span><br>
+                        ├── Makefile <span style="color:var(--accent-cyan)">(Ops)</span><br>
+                        ├── events/ <span style="color:var(--accent-cyan)">(Tests)</span><br>
+                        ├── samconfig.toml<br>
+                        └── handler.py
+                    </div>
+                    <div class="col">
+                        <h3>Infrastructure as Code</h3>
+                        <p style="font-size: 1rem; text-align: left;">
+                            • Versioned<br>
+                            • Reproducible<br>
+                            • 1-Command Deploy
+                        </p>
+                    </div>
+                </div>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>From manual markdown to full IaC (SAM).</li>
+                        <li>Added tests (Makefile, curl harness).</li>
+                        <li>Total transformation of project maturity.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: What Changed? -->
+        <div class="slide">
+            <h2>Abstraction Shift</h2>
+            <div class="content-box">
+                <div class="two-col">
+                    <div class="col">
+                        <h3 style="color: #888">2025</h3>
+                        <p>Knowledgeable Colleague</p>
+                        <small>"I can't touch the keyboard."</small>
+                    </div>
+                    <div class="col">
+                        <h3 style="color: var(--accent-cyan)">2026</h3>
+                        <p>Junior Engineer</p>
+                        <small>"I'll handle that task."</small>
+                    </div>
+                </div>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>2025: I was the executor. AI was the advisor.</li>
+                        <li>2026: AI is the executor (within guardrails).</li>
+                        <li>The shift is <b>Agency</b>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: The Insight -->
+        <div class="slide">
+            <h2>The Expertise Paradox</h2>
+            <div class="content-box">
+                <p>As tools become more capable,<br><span style="color: var(--accent-purple); font-weight:bold;">Domain Knowledge matters MORE.</span></p>
+                <div style="text-align: left; width: 100%;">
+                    <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">• <b>Design Judgment</b>: Is this architecture right?</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">• <b>Security</b>: Are IAM roles scoped correctly?</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">• <b>Ops</b>: What will this cost?</p>
+                </div>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>Delegating execution requires ability to <b>Review</b>.</li>
+                        <li>I couldn't verify the SAM template if I didn't know CloudFormation.</li>
+                        <li>Trusting requires validation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Trust Gradient -->
+        <div class="slide">
+            <h2>The Trust Gradient</h2>
+            <div class="content-box">
+                <div class="trust-gradient">
+                    <div class="bar" style="height: 30%;"><span>Snippet</span></div>
+                    <div class="bar" style="height: 50%;"><span>Function</span></div>
+                    <div class="bar" style="height: 70%;"><span>Task</span></div>
+                    <div class="bar" style="height: 90%;"><span>Pipeline?</span></div>
+                </div>
+                <p>Volume of delegation increases. Review remains constant.</p>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>Gradient has shifted up.</li>
+                        <li>Result: Lower "Activation Energy" for side projects.</li>
+                        <li>Ideas become working systems much faster.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Conclusion -->
+        <div class="slide">
+            <h1>AI Amplifies Expertise</h1>
+            <p>It doesn't replace it.</p>
+            <div class="content-box">
+                <p>The Sweet Spot:<br>Powerful enough to delegate.<br>Constrained enough to verify.</p>
+                <div class="speaker-prompts">
+                    <span class="prompt-label">Presenter Notes</span>
+                    <ul class="prompt-list">
+                        <li>Infrastructure as Code that I can trust.</li>
+                        <li>Not bad for an afternoon's conversation.</li>
+                        <li>Q&A.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nav-hint">Use Left/Right Arrow Keys to Navigate</div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'left');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index < currentSlide) {
+                    slide.classList.add('left');
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    updateSlides();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlides();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

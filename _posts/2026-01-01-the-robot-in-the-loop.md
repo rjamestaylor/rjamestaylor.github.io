@@ -11,6 +11,13 @@ excerpt: "What if your newest hire knew what to do next? The real promise of AI 
 
 ---
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0; border: 1px solid #333;">
+  <iframe src="/assets/presentations/robot-in-the-loop/index.html" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+<div style="text-align: center; margin-bottom: 2rem;">
+  <a href="/assets/presentations/robot-in-the-loop/index.html" target="_blank">View Presentation Fullscreen ↗</a>
+</div>
+
 ## The Problem Everyone's Still Trying to Solve
 
 "My site is slow."
