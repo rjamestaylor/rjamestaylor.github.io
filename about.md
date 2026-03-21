@@ -39,8 +39,12 @@ Each location deserves its own blog post. Hmm...
 
 ### Why "Robot Terror"?
 
-The name combines my interest in automation and AI ("Robot") with a playful nod to the sometimes concerning implications of technology ("Terror"). It's a reminder to build technology mindfully, with awareness of both its benefits and potential risks. Most importantly, though: it's a malapropism of my given name "Robert Taylor".
+{% if site.baseurl %}{% assign base = site.baseurl %}{% else %}{% assign base = "" %}{% endif %}
+![Official Adobe Office Nameplate for "Robot"]({{ base }}/assets/images/adobe-nameplate.jpg)
 
+The name combines my interest in automation and AI ("Robot") with a playful nod to the sometimes concerning implications of technology ("Terror"). It's a reminder to build technology mindfully, with awareness of both its benefits and potential risks. 
+
+Most importantly, though: it's a malapropism of my given name "Robert Taylor" [which you can read about here]({% post_url 2013-05-11-meta-origin-of-robot-terror %}). The nickname eventually stuck so well that it even made it onto my official office nameplate at Adobe in Seattle!
 ### Connect With Me
 
 - [GitHub](https://github.com/rjamestaylor)
