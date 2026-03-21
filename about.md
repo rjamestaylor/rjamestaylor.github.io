@@ -48,7 +48,7 @@ Most importantly, though: it's a malapropism of my given name "Robert Taylor" [w
 ### Connect With Me
 
 - [GitHub](https://github.com/rjamestaylor)
-- [BlueSky](https://bsky.app/profile/robotterror.com)
+- [Threads](https://threads.net/@robottaylor)
 - [LinkedIn](https://linkedin.com/in/rjamestaylor)
 - Email: re@liability.engineering
 
