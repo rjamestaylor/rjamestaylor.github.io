@@ -190,11 +190,11 @@ After the messages, RoboMobo moved again. Find My next reported it around Huafa 
   Shenzhen. 6,904 miles away. Fourteen hours since the last report when I took the screenshot.
 </p>
 
-A wider view made the geography clearer.
+A tighter view made the neighborhood clearer.
 
 <p style="text-align: center;">
   <img src="{{ '/assets/images/stolen-iphone/robomobo-shenzhen-wide.png' | relative_url }}"
-       alt="Wider Find My map showing the location of stolen iPhone RoboMobo in Shenzhen"
+       alt="Tighter Find My map showing the location of stolen iPhone RoboMobo in Shenzhen"
        style="max-width: 100%; border-radius: 4px;" />
 </p>
 
